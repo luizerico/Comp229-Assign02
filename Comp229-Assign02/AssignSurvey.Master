@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AssignSurvey.Master.cs" Inherits="Comp229_Assign02.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta name="description" content="Survey Assignment Page. Centennial College" />
+    <script type="text/javascript" src="/resources/scripts/survey.js" ></script>
+    <link type="text/css" rel="stylesheet" href="/resources/css/survey.css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <ul>
+            <li><a href="/home.aspx">Home</a></li>
+            <li><a href="/survey/survey.aspx">Survey</a></li>
+            <li><a href="/aboutus.aspx">About us</a></li>
+        </ul>
+        <h1>Menu</h1>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    <div id="footer"> 
+        <p>-</p>
+        <p>-</p>
+    </div>
+    </form>
+</body>
+</html>
