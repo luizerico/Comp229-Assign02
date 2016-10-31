@@ -10,5 +10,9 @@ namespace Comp229_Assign02.survey
             Page.Title = "Survey - " + Application["app_name"];
         }
 
+        protected void button_submit_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("thankyou.aspx", true);
+        }
     }
 }

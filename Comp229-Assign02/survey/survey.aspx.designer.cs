@@ -13,6 +13,15 @@ namespace Comp229_Assign02.survey {
     public partial class WebForm1 {
         
         /// <summary>
+        /// SqlDataSource1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        
+        /// <summary>
         /// label_firstname control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace Comp229_Assign02.survey {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox text_firstname;
+        
+        /// <summary>
+        /// text_firstname_req control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator text_firstname_req;
         
         /// <summary>
         /// label_lastname control.
@@ -49,6 +67,15 @@ namespace Comp229_Assign02.survey {
         protected global::System.Web.UI.WebControls.TextBox text_lastname;
         
         /// <summary>
+        /// text_lastname_req control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator text_lastname_req;
+        
+        /// <summary>
         /// label_gender control.
         /// </summary>
         /// <remarks>
@@ -65,6 +92,15 @@ namespace Comp229_Assign02.survey {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList radiobox_gender;
+        
+        /// <summary>
+        /// radiobox_gender_req control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator radiobox_gender_req;
         
         /// <summary>
         /// label_birthdate control.
@@ -103,6 +139,15 @@ namespace Comp229_Assign02.survey {
         protected global::System.Web.UI.WebControls.TextBox text_email;
         
         /// <summary>
+        /// text_email_exp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator text_email_exp;
+        
+        /// <summary>
         /// label_phone control.
         /// </summary>
         /// <remarks>
@@ -121,6 +166,15 @@ namespace Comp229_Assign02.survey {
         protected global::System.Web.UI.WebControls.TextBox text_phone;
         
         /// <summary>
+        /// text_phone_exp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator text_phone_exp;
+        
+        /// <summary>
         /// label_country control.
         /// </summary>
         /// <remarks>
@@ -137,6 +191,15 @@ namespace Comp229_Assign02.survey {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList dropdown_country;
+        
+        /// <summary>
+        /// button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button button1;
         
         /// <summary>
         /// label_university control.
@@ -175,6 +238,15 @@ namespace Comp229_Assign02.survey {
         protected global::System.Web.UI.WebControls.CheckBoxList checkbox_areas;
         
         /// <summary>
+        /// button2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button button2;
+        
+        /// <summary>
         /// button_next control.
         /// </summary>
         /// <remarks>
@@ -193,13 +265,13 @@ namespace Comp229_Assign02.survey {
         protected global::System.Web.UI.WebControls.Label label_haveworked;
         
         /// <summary>
-        /// radiobox_haveworked control.
+        /// checkbox_haveworked control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList radiobox_haveworked;
+        protected global::System.Web.UI.WebControls.DropDownList checkbox_haveworked;
         
         /// <summary>
         /// label_company1 control.
@@ -254,6 +326,15 @@ namespace Comp229_Assign02.survey {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Calendar calendar_end1;
+        
+        /// <summary>
+        /// survey_validation_summary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary survey_validation_summary;
         
         /// <summary>
         /// button_previous control.

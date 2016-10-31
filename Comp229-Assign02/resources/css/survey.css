@@ -1,10 +1,24 @@
 ﻿.form_page_active{
-    display:block;
-    opacity: 1;
+    display: block;
 }
 
 .form_page_inactive {
     display: none;
-    opacity:0;
-    transition:opacity 0.5s linear;
+}
+
+.validation_error ul {
+    color: #ff0000;
+    background-color: #fcffcb;
+    display: block;
+    padding: 10px 30px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+span.validation_error {
+    color: #ff0000;
+}
+
+.worked_before {
+    display: none;
 }

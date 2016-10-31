@@ -1,7 +1,7 @@
 ﻿var survey_changepage = (previous, next) => {
-    // We could use some function from jQuery which is too more simple. Maybe I will do it later.  
-    x1 = document.getElementById(previous).style.display = "none";
-    x2 = document.getElementById(next).style.display = "block";
+    // Changed to a better approach using classes CSS  
+    document.getElementById(previous).className = "form_page_inactive"
+    document.getElementById(next).className = "form_page_active";
 
     /* Unnecessary verifications removed... Using a short and more efficient code.
     x1 = document.getElementById(previous);
@@ -12,4 +12,17 @@
         x2.style.display = "block";
     }
     */
+}
+
+/* 
+ * CHange the style properties directly using javascript instead to use a CSS classname;
+ * Again, there are ways more commons using the jQuery library to change this...
+ */
+var survey_changeWorkedBefore = (e, target) => {
+    console.log(e);
+    if (e.value == "Yes") {
+        document.getElementById(target).style.display = "block";
+    } else {
+        document.getElementById(target).style.display = "none";
+    }
 }
