@@ -307,7 +307,7 @@ namespace Comp229_Assign02.survey {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar calendar_start1;
+        protected global::System.Web.UI.WebControls.TextBox calendar_start1;
         
         /// <summary>
         /// label_end1 control.
@@ -325,16 +325,16 @@ namespace Comp229_Assign02.survey {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar calendar_end1;
+        protected global::System.Web.UI.WebControls.TextBox calendar_end1;
         
         /// <summary>
-        /// survey_validation_summary control.
+        /// ValidationSummary1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary survey_validation_summary;
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
         
         /// <summary>
         /// button_previous control.

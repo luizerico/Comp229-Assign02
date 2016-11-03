@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace Comp229_Assign02.survey
 {
@@ -14,5 +15,15 @@ namespace Comp229_Assign02.survey
         {
             Server.Transfer("thankyou.aspx", true);
         }
+
+        protected void DateValidateValue(object source, ServerValidateEventArgs args)
+        {
+            if (checkbox_haveworked.SelectedValue.Equals("yes"))
+            {
+                
+            }
+        }
+
+
     }
 }

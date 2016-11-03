@@ -8,26 +8,51 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <meta name="description" content="Survey Assignment Page. Centennial College" />
-    <script type="text/javascript" src="/resources/scripts/survey.js" ></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link type="text/css" rel="stylesheet" href="/resources/bootstrap/css/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="/resources/css/survey.css" />
+    <link rel="icon" href="/favicon.ico" />
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
-        <ul>
-            <li><a href="/home.aspx">Home</a></li>
-            <li><a href="/survey/survey.aspx">Survey</a></li>
-            <li><a href="/aboutus.aspx">About us</a></li>
-        </ul>
-        <h1>Menu</h1>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
+
+    <div class="container-fluid">
+        <div id="header" class="row ">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">
+                            <img src="/resources/images/survey-icon-24.gif" style="margin-top: -5px;" />
+                        </a>
+                        <ul class="nav navbar-nav">
+                            <li><a href="/home.aspx">Home</a></li>
+                            <li><a href="/survey/survey.aspx">Survey</a></li>
+                            <li><a href="/aboutus.aspx">About us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="row">
+            <form id="form1" runat="server">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+
+            </form>
+        </div>
     </div>
-    <div id="footer"> 
-        <p>-</p>
-        <p>-</p>
+    <div id="footer">
+        <div class="container-fluid">
+            <div id="header" class="row text-center">
+                <p><a href="/privacy.aspx">Privacy Policy</a> - <a href="/disclaimer.aspx">Disclaimer</a></p>
+            </div>
+        </div>
     </div>
-    </form>
+
+    <script src="/resources/jquery/jquery-3.1.1.min.js"></script>
+    <script src="/resources/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/resources/scripts/survey.js"></script>
 </body>
 </html>

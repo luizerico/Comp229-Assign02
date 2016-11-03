@@ -94,11 +94,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="favicon.ico" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="AssignSurvey.Master" />
+    <Content Include="privacy.aspx" />
+    <Content Include="disclaimer.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -109,6 +112,9 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="resources\css\survey.css" />
+    <Content Include="resources\images\survey-icon-23.gif" />
+    <Content Include="resources\images\survey-icon-24.gif" />
+    <Content Include="resources\jquery\jquery-3.1.1.min.js" />
     <Content Include="scripts\ai.0.22.19-build00125.js" />
     <Content Include="scripts\ai.0.22.19-build00125.min.js" />
     <Content Include="resources\scripts\survey.js" />
@@ -158,9 +164,25 @@
     <Compile Include="survey\thankyou.aspx.designer.cs">
       <DependentUpon>thankyou.aspx</DependentUpon>
     </Compile>
+    <Compile Include="privacy.aspx.cs">
+      <DependentUpon>privacy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="privacy.aspx.designer.cs">
+      <DependentUpon>privacy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="disclaimer.aspx.cs">
+      <DependentUpon>disclaimer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="disclaimer.aspx.designer.cs">
+      <DependentUpon>disclaimer.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="resources\images\" />
+    <Folder Include="resources\bootstrap\css\" />
+    <Folder Include="resources\bootstrap\fonts\" />
+    <Folder Include="resources\bootstrap\js\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
