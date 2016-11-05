@@ -1,14 +1,20 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AssignSurvey.Master" AutoEventWireup="true" CodeBehind="survey.aspx.cs" Inherits="Comp229_Assign02.survey.WebForm1" %>
 
+<%-- Note about required fields: Besides the instructions require the optional fields marked, I chose the most common
+    design that is mark the required fields using a asterisk. This can be inverted by editing the css file. --%>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
     <h1>Survey</h1>
     <div class="fom-horizontal">
+        <%-- Beside .Net has a wizard component to make multipage forms, I try to do it with a more simple and clean functions using
+            javascript. Not so robust, but it is functional.
+            Warning: This is a not enough tested code and could present weird results when integrated with other components. --%>
         <div id="form_page1" class="form_page_active">
             <div class="form-group">
-                <asp:Label runat="server" ID="label_firstname" Text="First Name:" CssClass="col-md-2 control-label" />
+                <asp:Label runat="server" ID="label_firstname" Text="First Name:" CssClass="col-md-2 control-label required" />
                 <div class="col-md-10">
                     <asp:TextBox runat="server" ID="text_firstname" placeholder="Your first name" ToolTip="Inform your first name" CssClass="form-control" />
                     <asp:RequiredFieldValidator ID="text_firstname_req" runat="server" ErrorMessage="Please, inform your first name."
@@ -16,7 +22,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <asp:Label runat="server" ID="label_lastname" Text="Last Name:" CssClass="col-md-2 control-label" />
+                <asp:Label runat="server" ID="label_lastname" Text="Last Name:" CssClass="col-md-2 control-label required" />
                 <div class="col-md-10">
                     <asp:TextBox runat="server" ID="text_lastname" placeholder="Your last name" ToolTip="Inform your last name" CssClass="form-control" />
                     <asp:RequiredFieldValidator ID="text_lastname_req" runat="server" ErrorMessage="Please, inform your last name."
@@ -24,7 +30,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <asp:Label runat="server" ID="label_gender" Text="Gender:" CssClass="col-md-2 control-label" />
+                <asp:Label runat="server" ID="label_gender" Text="Gender:" CssClass="col-md-2 control-label required" />
                 <div class="col-md-10">
                     <asp:RadioButtonList runat="server" ID="radiobox_gender" RepeatDirection="Horizontal">
                         <asp:ListItem Value="Male">Male</asp:ListItem>
@@ -35,23 +41,29 @@
                 </div>
             </div>
             <div class="form-group">
-                <asp:Label runat="server" ID="label_birthdate" Text="Birthdate:" CssClass="col-md-2 control-label" />
+                <asp:Label runat="server" ID="label_birthdate" Text="Birthdate:" CssClass="col-md-2 control-label required" />
                 <div class="col-md-10">
                     <asp:Calendar runat="server" ID="date_birthdate"></asp:Calendar>
                 </div>
             </div>
             <div class="form-group">
-                <asp:Label runat="server" ID="label_email" Text="Email:" CssClass="col-md-2 control-label" />
+                <asp:Label runat="server" ID="label_email" Text="Email:" CssClass="col-md-2 control-label required" />
                 <div class="col-md-10">
                     <asp:TextBox runat="server" ID="text_email" placeholder="Your email" ToolTip="Inform a valid email to contact you." TextMode="Email" CssClass="form-control" />
+                    <%-- Using two validators to check email and phone. I try some expressions to check for empty or null strings 
+                        but it doenst working. Write a custom validator will be more simple. I will do it later. --%>
                     <asp:RegularExpressionValidator runat="server" ID="text_email_exp" ErrorMessage="Invalid email" ValidationExpression="^\S+@\S+\.\S+$" ControlToValidate="text_email" CssClass="validation_error" Display="Dynamic" />
+                    <asp:RequiredFieldValidator ID="text_email_req" runat="server" ErrorMessage="Please, inform the email."
+                        ControlToValidate="text_email" SetFocusOnError="True" Display="Dynamic" CssClass="validation_error" />
                 </div>
             </div>
             <div class="form-group">
-                <asp:Label runat="server" ID="label_phone" Text="Contact Phone:" CssClass="col-md-2 control-label" />
+                <asp:Label runat="server" ID="label_phone" Text="Contact Phone:" CssClass="col-md-2 control-label required" />
                 <div class="col-md-10">
                     <asp:TextBox runat="server" ID="text_phone" placeholder="(XXX) XXX XXXX" ToolTip="Inform a valid phone number to contact you." TextMode="Phone" CssClass="form-control" />
-                    <asp:RegularExpressionValidator runat="server" ID="text_phone_exp" ErrorMessage="Invalid phone number" ValidationExpression="^\(?\d{3}\)?(\s|-)\d{3}-\d{4}$" ControlToValidate="text_phone" CssClass="validation_error" Display="Dynamic" />
+                    <asp:RegularExpressionValidator runat="server" ID="text_phone_exp" ErrorMessage="Invalid phone number." ValidationExpression="^\(?\d{3}\)?(\s|-)\d{3}-\d{4}$" ControlToValidate="text_phone" CssClass="validation_error" Display="Dynamic" />
+                    <asp:RequiredFieldValidator ID="text_phone_req" runat="server" ErrorMessage="Please, inform the phone number."
+                        ControlToValidate="text_phone" SetFocusOnError="True" Display="Dynamic" CssClass="validation_error" />
                 </div>
             </div>
             <div class="form-group">
@@ -131,20 +143,25 @@
                 <div class="form-group">
                     <asp:Label runat="server" ID="label_start1" Text="Start:" CssClass="col-md-2 control-label" />
                     <div class="col-md-10">
-                        <asp:TextBox runat="server" ID="calendar_start1" TextMode="Date" CssClass="form-control" />
+                        <%-- Using a textbox field with TextMode=Date. Some browsers doesnt have the date field component
+                            (HTML5) and should be better use a jQuery component. This is here because its only a test. 
+                            At time, Edge browser has a horrible HTML5 date component. --%>
+                        <asp:TextBox runat="server" ID="text_start1" TextMode="Date" CssClass="form-control" />
+                        <asp:RangeValidator id="text_start1_rag" runat="server" Type="Date" ControlToValidate="text_start1" MinimumValue="1/1/2000" MaximumValue="12/31/2016" ErrorMessage="Don't use experiences before 2000. " Display="Dynamic" />
                     </div>
                 </div>
                 <div class="form-group">
                     <asp:Label runat="server" ID="label_end1" Text="End:" CssClass="col-md-2 control-label" />
                     <div class="col-md-10">
-                        <asp:TextBox runat="server" ID="calendar_end1" TextMode="Date" CssClass="form-control" />
+                        <asp:TextBox runat="server" ID="text_end1" TextMode="Date" CssClass="form-control" />
+                        <asp:RangeValidator id="text_end1_rag" runat="server" Type="Date" ControlToValidate="text_end1" MinimumValue="1/1/2000" MaximumValue="12/31/2016" ErrorMessage="Don't use experiences before 2000. " Display="Dynamic" />
                     </div>
                 </div>
             </div>
             <div class="form-group col-md-12">
                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-12">
                 <asp:Button runat="server" ID="button_previous" Text="Previous Page"
                     OnClientClick="javascript:survey_changepage('form_page3', 'form_page2'); return false;" CssClass="btn btn-default" />
                 <asp:Button runat="server" ID="button_submit" Text="Submit" OnClick="button_submit_Click" CssClass="btn btn-default" />

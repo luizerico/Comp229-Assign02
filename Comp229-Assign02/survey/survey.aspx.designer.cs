@@ -148,6 +148,15 @@ namespace Comp229_Assign02.survey {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator text_email_exp;
         
         /// <summary>
+        /// text_email_req control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator text_email_req;
+        
+        /// <summary>
         /// label_phone control.
         /// </summary>
         /// <remarks>
@@ -173,6 +182,15 @@ namespace Comp229_Assign02.survey {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator text_phone_exp;
+        
+        /// <summary>
+        /// text_phone_req control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator text_phone_req;
         
         /// <summary>
         /// label_country control.
@@ -301,13 +319,22 @@ namespace Comp229_Assign02.survey {
         protected global::System.Web.UI.WebControls.Label label_start1;
         
         /// <summary>
-        /// calendar_start1 control.
+        /// text_start1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox calendar_start1;
+        protected global::System.Web.UI.WebControls.TextBox text_start1;
+        
+        /// <summary>
+        /// text_start1_rag control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator text_start1_rag;
         
         /// <summary>
         /// label_end1 control.
@@ -319,13 +346,22 @@ namespace Comp229_Assign02.survey {
         protected global::System.Web.UI.WebControls.Label label_end1;
         
         /// <summary>
-        /// calendar_end1 control.
+        /// text_end1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox calendar_end1;
+        protected global::System.Web.UI.WebControls.TextBox text_end1;
+        
+        /// <summary>
+        /// text_end1_rag control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator text_end1_rag;
         
         /// <summary>
         /// ValidationSummary1 control.

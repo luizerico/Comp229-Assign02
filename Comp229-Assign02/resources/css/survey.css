@@ -1,4 +1,13 @@
-﻿.form_page_active{
+﻿#body{
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.form-group {
+    overflow: auto;
+}
+
+.form_page_active{
     display: block;
 }
 
@@ -21,4 +30,11 @@ span.validation_error {
 
 .worked_before {
     display: none;
+}
+
+.required:after 
+{
+    content: "*";
+    font-weight: bold;
+    color: red; 
 }
