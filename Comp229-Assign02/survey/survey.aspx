@@ -9,6 +9,11 @@
     <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
     <h1>Survey</h1>
     <div class="fom-horizontal">
+        <asp:PlaceHolder runat="server" ID="user_name">
+            <h3 style="text-align:center; margin-bottom:20px;">
+                Welcome back <asp:Label runat="server" ID="label_user"></asp:Label>.
+            </h3>
+        </asp:PlaceHolder>
         <%-- Beside .Net has a wizard component to make multipage forms, I try to do it with a more simple and clean functions using
             javascript. Not so robust, but it is functional.
             Warning: This is a not enough tested code and could present weird results when integrated with other components. --%>
@@ -16,7 +21,7 @@
             <div class="form-group">
                 <asp:Label runat="server" ID="label_firstname" Text="First Name:" CssClass="col-md-2 control-label required" />
                 <div class="col-md-10">
-                    <asp:TextBox runat="server" ID="text_firstname" placeholder="Your first name" ToolTip="Inform your first name" CssClass="form-control" />
+                    <asp:TextBox runat="server" ID="text_firstname" placeholder="Your first name" ToolTip="Inform your first name" CssClass="form-control"  />
                     <asp:RequiredFieldValidator ID="text_firstname_req" runat="server" ErrorMessage="Please, inform your first name."
                         ControlToValidate="text_firstname" SetFocusOnError="True" Display="Dynamic" CssClass="validation_error" />
                 </div>
@@ -59,8 +64,8 @@
             </div>
             <div class="form-group">
                 <asp:Label runat="server" ID="label_phone" Text="Contact Phone:" CssClass="col-md-2 control-label required" />
-                <div class="col-md-10">
-                    <asp:TextBox runat="server" ID="text_phone" placeholder="(XXX) XXX XXXX" ToolTip="Inform a valid phone number to contact you." TextMode="Phone" CssClass="form-control" />
+                <div class="col-md-10">                    
+                    <asp:TextBox runat="server" ID="text_phone" placeholder="(XXX) XXX XXXX" ToolTip="Inform a valid phone number to contact you." TextMode="Phone" CssClass="form-control" ClientIDMode="Static" OnKeyDown="javascript:phone_mask(this);"/>
                     <asp:RegularExpressionValidator runat="server" ID="text_phone_exp" ErrorMessage="Invalid phone number." ValidationExpression="^\(?\d{3}\)?(\s|-)\d{3}-\d{4}$" ControlToValidate="text_phone" CssClass="validation_error" Display="Dynamic" />
                     <asp:RequiredFieldValidator ID="text_phone_req" runat="server" ErrorMessage="Please, inform the phone number."
                         ControlToValidate="text_phone" SetFocusOnError="True" Display="Dynamic" CssClass="validation_error" />

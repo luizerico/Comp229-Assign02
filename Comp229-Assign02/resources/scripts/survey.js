@@ -26,3 +26,16 @@ var survey_changeWorkedBefore = (e, target) => {
         document.getElementById(target).style.display = "none";
     }
 }
+
+/*
+ * Function based on code extracted from http://stackoverflow.com/questions/17651207/mask-us-phone-number-string-with-javascript
+ * This function uses a regular expression to add the characters while the numbers are entered. 
+ * This function uses the \D instead than [^0-9] to refer to all but numbers. 
+ * jQuery has some components to do this but I think this code is more simple e beautyful. 
+ * I will do some tests to see the best approach (OnBlur, OnKeyDown, etc) to call the function.
+ */
+var phone_mask = (e) => {
+    /* console.log(e.value ); */
+    var x = e.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+    e.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+};
